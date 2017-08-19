@@ -19,7 +19,7 @@
       
   </head>
 
-  <body background="images/Watson-image.jpg" style="background-repeat:no-repeat;background-size:cover;" onload="watsonProcess()">
+  <body onload="watsonProcess()" style="background-color:#000000">
 
     <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
       <a class="navbar-brand" href="#">Navbar</a>
@@ -57,18 +57,21 @@
     <div class="container">
 
       <div class="row row-offcanvas row-offcanvas-right">
-
-          <h1>Aguarde...</h1>
-
+          <h1 style="color:#7f7f7f">Aguarde...</h1>
         </div>
     </div><!--/.container-->
 
+      <div style="text-align: center;vertical-align: middle;">
+          <img src="images/Watson_animated.gif"/>
+      </div>
+      
+      
       <script>
           
           function watsonProcess(){
               setTimeout(function(){
-                window.location.href='page3.html';
-              },3000);
+               window.location.href='page3.html';
+              },5000);
               
           }
       
