@@ -16,7 +16,7 @@ module.exports = {
       .getText("#username", function(result) {
     	this.assert.equal(typeof result, "object");
     	this.assert.equal(result.status, 0);
-    	this.assert.equal(result.value, "Olá");
+    	this.assert.equal(result.value, "Olá, Joao");
   	  })
       .end();
   }
