@@ -1,12 +1,23 @@
 module.exports = {
-  'Demo test GM' : function (browser) {
+  'step one' : function (browser) {
     browser
-      .url('https://ibmmethod-beta.mybluemix.net/devops/method')
-      .waitForElementVisible('.searchbox.hidden-xs.hidden-sm', 60000, true,
-        function(){}, 'Waiting for Search Input to become visible')
-      .setValue('.searchbox.hidden-xs.hidden-sm', 'Test')
-      .waitForElementPresent('#search-page', 60000)
-      .pause(5000)
+      .url('http://simple-toolchain-20170815124414731-test.mybluemix.net/page1-demo.html')
+      .waitForElementVisible('body', 1000)
+      .setValue('input[name=nome]', 'Joao')
+      .click('button[name=Enviar]')
+      .waitForElementPresent('h1', 60000)
+      .getText("h1", function(result) {
+    	this.assert.equal(typeof result, "object");
+    	this.assert.equal(result.status, 0);
+    	this.assert.equal(result.value, "Aguarde");
+  	  })
+      .pause(1000)
+      .waitForElementPresent('#username', 60000)
+      .getText("#username", function(result) {
+    	this.assert.equal(typeof result, "object");
+    	this.assert.equal(result.status, 0);
+    	this.assert.equal(result.value, "Olá");
+  	  })
       .end();
   }
 };
