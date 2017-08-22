@@ -4,7 +4,7 @@ module.exports = {
       .url('http://simple-toolchain-20170815124414731-test.mybluemix.net/page1-demo.html')
       .waitForElementVisible('body', 1000)
       .setValue('input[name=nome]', 'Joao')
-      .click('button[name=Enviar]')
+      .click('input[value=Enviar]')
       .waitForElementPresent('h1', 60000)
       .getText("h1", function(result) {
     	this.assert.equal(typeof result, "object");
