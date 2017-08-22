@@ -9,7 +9,7 @@ module.exports = {
       .getText("h1", function(result) {
     	this.assert.equal(typeof result, "object");
     	this.assert.equal(result.status, 0);
-    	this.assert.equal(result.value, "Aguarde");
+    	this.assert.equal(result.value, "Aguarde...");
   	  })
       .pause(1000)
       .waitForElementPresent('#username', 60000)
